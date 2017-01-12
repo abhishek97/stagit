@@ -1,0 +1,22 @@
+{
+  "name": "stagit",
+  "version": "1.0.0",
+  "description": "Node module for steganography(hide codes inside images) in pure JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name" : "Abhishek Gupta",
+    "email" : "ag120397@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "get-pixels": "^3.3.0",
+    "save-pixels": "^2.3.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mcavage/node-asn1.git"
+  }
+}
