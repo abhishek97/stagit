@@ -1,6 +1,6 @@
 {
   "name": "stagit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node module for steganography(hide codes inside images) in pure JavaScript.",
   "main": "index.js",
   "scripts": {

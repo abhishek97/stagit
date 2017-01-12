@@ -137,7 +137,7 @@ function decode(fileName , options , callback) {
     let message = [];
     let x = 0;
 
-    const dataFile = fs.readFile(__dirname + "/" + fileName  , function (err , dataFile) {
+    const dataFile = fs.readFile(fileName  , function (err , dataFile) {
         if(err)
         {
             callback(err);
