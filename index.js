@@ -2,7 +2,7 @@
  * Created by abhishek on 10/01/17.
  */
 'use strict';
- 
+
 const getPixel = require('get-pixels');
 const savePixel = require('save-pixels');
 const fs = require('fs');
@@ -98,8 +98,10 @@ function encode(fileName , text  , options ,callback  ) {
         }
 
         //write the image to disk as png
-        const encodedFile =   fileName + "encoded" + ".png" ;
-        const file = fs.createWriteStream(__dirname +  "/" + encodedFile);
+        const dir = fileName.split('/');
+        const imageName = dir.pop();
+        const encodedFile =   imageName + "encoded" + ".png" ;
+        const file = fs.createWriteStream( dir.join('/') +  "/" + encodedFile);
         let stream = savePixel(pixels , "png").pipe(file) ;
 
         //call callback when done!
@@ -112,7 +114,7 @@ function encode(fileName , text  , options ,callback  ) {
     });
 }
 
-function decode(fileName , options , callback) {
+function decode(filePath , options , callback) {
     /*
      coded file (png)
      options : {
@@ -137,7 +139,7 @@ function decode(fileName , options , callback) {
     let message = [];
     let x = 0;
 
-    const dataFile = fs.readFile(fileName  , function (err , dataFile) {
+    const dataFile = fs.readFile(filePath  , function (err , dataFile) {
         if(err)
         {
             callback(err);
@@ -194,24 +196,24 @@ function decode(fileName , options , callback) {
 }
 
 /*
-encode("cat.jpg" ,"FU" , function (err , encodedFile) {
-    if (err) {
-        console.error(err);
-        return;
-    }
+ encode("cat.jpg" ,"FU" , function (err , encodedFile) {
+ if (err) {
+ console.error(err);
+ return;
+ }
 
-});
+ });
 
 
-decode("Encode_cat.jpg.png" , function (err , message) {
-    if(err){
-        console.error(err);
-        return;
-    }
-    console.log(message);
-});
+ decode("Encode_cat.jpg.png" , function (err , message) {
+ if(err){
+ console.error(err);
+ return;
+ }
+ console.log(message);
+ });
 
-*/
+ */
 
 module.exports = {
     encode ,
