@@ -98,7 +98,7 @@ function encode(fileName , text  , options ,callback  ) {
         }
 
         //write the image to disk as png
-        const encodedFile = "Encode_" + fileName + ".png" ;
+        const encodedFile =   fileName + "encoded" + ".png" ;
         const file = fs.createWriteStream(__dirname +  "/" + encodedFile);
         let stream = savePixel(pixels , "png").pipe(file) ;
 
