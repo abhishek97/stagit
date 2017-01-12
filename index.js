@@ -201,7 +201,7 @@ encode("cat.jpg" ,"FU" , function (err , encodedFile) {
     }
 
 });
-*/
+
 
 decode("Encode_cat.jpg.png" , function (err , message) {
     if(err){
@@ -210,4 +210,11 @@ decode("Encode_cat.jpg.png" , function (err , message) {
     }
     console.log(message);
 });
+
+*/
+
+module.exports = {
+    encode ,
+    decode
+}
 
